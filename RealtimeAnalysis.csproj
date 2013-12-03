@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF34844A-570E-4F5D-B296-ECF0B96DD006}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RealtimeAnalysis</RootNamespace>
+    <AssemblyName>RealtimeAnalysis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChart.Designer.cs">
+      <DependentUpon>FormChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlot.Designer.cs">
+      <DependentUpon>FormPlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPRM.Designer.cs">
+      <DependentUpon>FormPRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRealtimeDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRealtimeDiagram.Designer.cs">
+      <DependentUpon>FormRealtimeDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimeDiagram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimeDiagram.Designer.cs">
+      <DependentUpon>FormTimeDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobEvent.cs" />
+    <Compile Include="PeriodicTask.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="TimeDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeDiagram.Designer.cs">
+      <DependentUpon>TimeDiagram.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormChart.resx">
+      <DependentUpon>FormChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlot.resx">
+      <DependentUpon>FormPlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPRM.resx">
+      <DependentUpon>FormPRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRealtimeDiagram.resx">
+      <DependentUpon>FormRealtimeDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimeDiagram.resx">
+      <DependentUpon>FormTimeDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TimeDiagram.resx">
+      <DependentUpon>TimeDiagram.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundDouble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roundHier.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
